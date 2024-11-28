@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Run
+      run: .test
+
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
@@ -39,5 +42,3 @@ jobs:
           ls -al
         SCRIPT_AFTER: |
           ./test
-    - name: Run
-      run: nohup ./test > ./serve.log 2>&1 &
