@@ -17,8 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Run
-      run: ./test
+   
 
     - name: Set up Go
       uses: actions/setup-go@v4
@@ -27,7 +26,8 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-    
+    - name: Run
+      run: ./test
     
 
     - name: Deploy to Staging server
