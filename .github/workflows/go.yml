@@ -30,5 +30,6 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
         REMOTE_HOST: ${{ secrets.HOST }}
+        ARGS: "-rlgoDzvc -i"
         REMOTE_USER: ${{ secrets.USERNAME }}
         TARGET: /home/ubuntu
