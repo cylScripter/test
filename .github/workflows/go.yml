@@ -27,6 +27,8 @@ jobs:
 
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
+      run: 
+          nohup ./test > ./serve.log 2>&1 &
       with:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
@@ -34,5 +36,3 @@ jobs:
         ARGS: "-rlgoDzvc -i --delete"
         SOURCE: "./"
         TARGET: /data/test
-        SCRIPT_BEFORE: |
-          nohup ./test > ./serve.log 2>&1 &
