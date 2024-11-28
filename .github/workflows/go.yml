@@ -26,7 +26,7 @@ jobs:
       run: go build -v ./...
 
     - name: Deploy to server
-      uses: appleboy/ssh-action@v0.1.7
+      uses: easingthemes/ssh-deploy@main
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
