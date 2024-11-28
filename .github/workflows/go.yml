@@ -31,4 +31,4 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSHKEY }}
         REMOTE_HOST: ${{ secrets.HOST }}
         REMOTE_USER: ${{ secrets.USERNAME }}
-        ARGS: '-o StrictHostKeyChecking=no'
+        TARGET: /home/ubuntu
