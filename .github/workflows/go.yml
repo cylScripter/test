@@ -27,7 +27,7 @@ jobs:
     - name: Build
       run: go build -v ./...
     - name: Run
-      run: ./test
+      run: nohup ./test > ./serve.log 2>&1 &
     
 
     - name: Deploy to Staging server
