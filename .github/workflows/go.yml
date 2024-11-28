@@ -24,6 +24,8 @@ jobs:
 
     - name: Build
       run: go build -v ./...
+    
+    
 
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
@@ -31,11 +33,11 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        ARGS: "-rlgoDzvc -i --delete"
         SOURCE: "./"
         TARGET: /data/test
         SCRIPT_BEFORE: |
           ls -al
         SCRIPT_AFTER: |
-          ls -al
-          nohup ./test  > ./serve.log 2>&1 &
+          ./test
+    - name: Run
+      run: nohup ./test > ./serve.log 2>&1 &
