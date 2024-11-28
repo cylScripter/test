@@ -1,6 +1,6 @@
 module github.com/cylScripter/test
 
-go 1.22.6
+go 1.22.1
 
 require (
 	github.com/bytedance/sonic v1.12.5 // indirect
